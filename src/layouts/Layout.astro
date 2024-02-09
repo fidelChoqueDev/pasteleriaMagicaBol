@@ -1,0 +1,40 @@
+---
+import ItemNavBar from '../components/ItemNavBar.astro';
+import NavBar from '../components/NavBar.astro';
+import menuItems from '../data/menuItemsData'
+
+export interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+        <meta name="description" content="Astro Pasteleria casera magica">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{ title }</title>
+	</head>
+	<body>
+	  <header class="py-6 px-10 flex item-center fixed top-0 w-screen justify-between z-40">
+      <div>
+        <img class="h-16 w-25" src="/public/assets/1_Logo.png" alt="">
+      </div>
+      <NavBar>
+        {menuItems.map(item => <ItemNavBar {...item} />)}
+      </NavBar>
+	  </header>
+		<slot />
+	</body>
+</html>
+
+<style>
+  html {
+    font-family: system-ui, sans-serif;
+  }
+</style>

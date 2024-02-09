@@ -1,0 +1,20 @@
+<ul class="flex p-0 w-11/12 h-16">
+    <slot /> {/* Aqui entra el componente ItemNavBar */}
+</ul>
+
+<style>
+  ul {
+    list-style: none;
+    margin: 0;
+    margin-bottom: -100px;
+    gap: 5px;
+    z-index: 100;
+    position: relative;
+    background: linear-gradient(
+      75deg, 
+      rgba(172, 53, 40, 0.5),
+      rgba(161, 108, 72, 0.5)58%,
+      rgba(129, 81, 49, 0));
+    background-repeat: no-repeat;
+  }
+</style>
